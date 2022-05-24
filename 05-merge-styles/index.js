@@ -43,7 +43,7 @@ function createStyleBundle(path, data) {
 async function init() {
   const cssPaths = await getCssPaths(path.join(__dirname, 'styles'));
   const stylesPromises = getStyles(cssPaths);
-  const styles = (await Promise.all(stylesPromises)).join('');
+  const styles = (await Promise.all(stylesPromises)).join('\n');
 
   createStyleBundle(path.join(__dirname, 'project-dist', 'bundle.css'), styles);
 }
